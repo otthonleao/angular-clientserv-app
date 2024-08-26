@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "clientserv-app"
+    }
+  },
+  "defaultProject": "clientserv-app",
+  "cli": {
+    "analytics": "24f31db0-286e-4d77-93f6-3403874898a7"
+  }
 }
