@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 export class ClientesService {
 
   constructor( private http: HttpClient ) {
-    this.http.get('http://localhost:8080/clientes')
   }
 
   salvar(cliente: Cliente) : Observable<Cliente> {
@@ -17,10 +16,16 @@ export class ClientesService {
 
   }
 
-  getCliente() : Cliente {
-    let cliente: Cliente = new Cliente();
-    cliente.nome = 'Fulano de Tal vindo do Service';
-    cliente.cpf = '888.888.888-88';
-    return cliente;
+  // getClientes() : Cliente[] {
+  //   let cliente = new Cliente();
+  //   cliente.id = 1;
+  //   cliente.nome = 'Otthon Leão';
+  //   cliente.cpf = '12345678900';
+  //   cliente.dataCadastro = '18/04/2024';
+  //   return [cliente];
+  // }
+
+  getClientes() : Observable<Cliente[]> {
+    return this.http.get<Cliente[]>('http://localhost:8080/api/clientes');
   }
 }
