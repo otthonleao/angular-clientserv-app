@@ -14,7 +14,8 @@
     </div>
 
     <!-- Campos do Formulário -->
-    <div class="row" *ngIf="cliente.id"> <!-- Se cliente.id estiver preenchido após salvar, exibe os campos id e dataCadastro-->
+    <div class="row" *ngIf="cliente.id">
+      <!-- Se cliente.id estiver preenchido após salvar, exibe os campos id e dataCadastro-->
       <div class="col-md-6">
         <div class="form-group">
           <label>ID:</label>
@@ -46,8 +47,11 @@
 
     <!-- Botões -->
     <div class="row">
-      <div class="col-md-2">
-        <button type="submit" class="btn btn-success">
+      <div class="col-md-3">
+        <button type="button" class="btn btn-secondary" (click)="voltarParaListagem()">
+          <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+        </button>
+        <button type="submit" class="btn btn-success ml-1">
           <i class="fa fa-save"></i> Salvar
         </button>
       </div>
