@@ -1,6 +1,6 @@
 <h1 class="mt-4">Clientes</h1>
 <ol class="breadcrumb mb-4">
-  <li class="breadcrumb-item active">Cadastro</li>
+  <li class="breadcrumb-item active">{{ cliente.id ? 'Edição' : 'Cadastro'}}</li>
 </ol>
 <div class="container">
   <form #clientForm="ngForm" (ngSubmit)="onSubmit()">
@@ -51,8 +51,11 @@
         <button type="button" class="btn btn-secondary" (click)="voltarParaListagem()">
           <i class="fa fa-arrow-alt-circle-left"></i> Voltar
         </button>
-        <button type="submit" class="btn btn-success ml-1">
+        <button class="btn btn-success ml-1" routerLink="/clientes-form/{{ cliente.id }}" *ngIf="!cliente.id"> <!-- Adiciona o botão de salvar apenas se o cliente.id não estiver preenchido -->
           <i class="fa fa-save"></i> Salvar
+        </button>
+        <button class="btn btn-primary ml-1" routerLink="/clientes-form/{{ cliente.id }}" *ngIf="cliente.id"> <!-- Adiciona o botão de atualizar se o id estiver preenchido -->
+          <i class="fa fa-sync-alt"></i> Atualizar
         </button>
       </div>
     </div>
