@@ -5,12 +5,10 @@ import dev.otthon.clientserv.model.Cliente;
 import dev.otthon.clientserv.model.ServicoPrestado;
 import dev.otthon.clientserv.repository.ClienteRepository;
 import dev.otthon.clientserv.repository.ServicoPrestadoRepository;
+import dev.otthon.clientserv.util.BigDecimalConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
@@ -24,8 +22,11 @@ public class ServicoPrestadoController {
   private ClienteRepository clienteRepository;
   @Autowired
   private ServicoPrestadoRepository servicoPrestadoRepository;
+  @Autowired
+  private BigDecimalConverter bigDecimalConverter;
 
   @PostMapping
+  @ResponseStatus(HttpStatus.CREATED)
   public ServicoPrestado salvar(@RequestBody ServicoPrestadoDTO dto) {
 
     LocalDate data = LocalDate.parse(dto.getData(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
@@ -38,6 +39,7 @@ public class ServicoPrestadoController {
     servicoPrestado.setDescricao(dto.getDescricao());
     servicoPrestado.setData(data);
     servicoPrestado.setCliente(cliente);
+    servicoPrestado.setValor(bigDecimalConverter.converter(dto.getPreco()));
 
     return null;
   }
