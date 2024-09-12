@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -27,6 +28,7 @@ public class ServicoPrestado {
     @Column(name = "VALOR")
     private BigDecimal valor;
 
-    private DateTi
+    @Column(name = "DATA")
+    private LocalDate data;
 
 }
