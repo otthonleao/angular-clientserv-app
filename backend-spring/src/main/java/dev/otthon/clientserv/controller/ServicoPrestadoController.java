@@ -42,7 +42,7 @@ public class ServicoPrestadoController {
     servicoPrestado.setCliente(cliente);
     servicoPrestado.setValor(bigDecimalConverter.converter(dto.getPreco()));
 
-    return null;
+    return servicoPrestadoRepository.save(servicoPrestado);
   }
 
   @GetMapping
