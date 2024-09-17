@@ -6,6 +6,7 @@ import dev.otthon.clientserv.model.ServicoPrestado;
 import dev.otthon.clientserv.repository.ClienteRepository;
 import dev.otthon.clientserv.repository.ServicoPrestadoRepository;
 import dev.otthon.clientserv.util.BigDecimalConverter;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class ServicoPrestadoController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public ServicoPrestado salvar(@RequestBody ServicoPrestadoDTO dto) {
+  public ServicoPrestado salvar(@RequestBody @Valid ServicoPrestadoDTO dto) {
 
     LocalDate data = LocalDate.parse(dto.getData(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     Long idCliente = dto.getIdCliente();
