@@ -9,10 +9,9 @@ import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: '', component: LayoutComponent }
-  // { path: 'clientes-form', component: ClientesFormComponent },
-  // { path: 'clientes-lista', component: ClientesListaComponent }
+  { path: '', component: LayoutComponent, children: [
+    { path: 'home', component: HomeComponent }
+  ] }
 ];
 
 @NgModule({
