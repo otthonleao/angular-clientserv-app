@@ -10,6 +10,7 @@ export class LoginComponent implements OnInit {
   username: string;
   password: string;
   loginError: boolean;
+  cadastrando: boolean;
 
   constructor() { }
 
@@ -18,6 +19,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log(`Username: ${this.username}, Password: ${this.password}`);
+  }
+
+  preparaCadastrar(event) {
+    event.preventDefault();
+    this.cadastrando = true;
+  }
+
+  cancelaCadastro() {
+    this.cadastrando = false;
   }
 
 }
