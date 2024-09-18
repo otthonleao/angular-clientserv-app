@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,15 @@ export class LoginComponent implements OnInit {
   loginError: boolean;
   cadastrando: boolean;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(`Username: ${this.username}, Password: ${this.password}`);
+    this.router.navigate(['/home']);
   }
 
   preparaCadastrar(event) {
