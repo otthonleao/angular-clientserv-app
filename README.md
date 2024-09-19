@@ -1,27 +1,20 @@
-# ClientservApp
+# Registro de Serviços Prestados por Clientes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Nesse repositório foi desenvolvido um sistema web no qual é possível cadastrar os serviços prestados a um determinado cliente. Nesta estrutura básica, cada cliente pode ser cadastrado com **nome** e **cpf**, além de poder ser atualizado e deletado. Após cadastrar o cliente, é possível cadastrar o vinculo do serviço realizado com **descrição**, **data** e **preço**.
 
-## Development server
+# Ferramentas
+- Angular 9
+- Java 17
+- Spring Boot 3
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<img width="696" alt="Captura de Tela 2024-09-19 às 02 17 09" src="https://github.com/user-attachments/assets/33a7b306-89df-4530-a5f2-bcec2efd33a8">
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<img width="696" alt="Captura de Tela 2024-09-19 às 02 15 04" src="https://github.com/user-attachments/assets/9c690c6b-8638-408a-9bc2-9e2f7a1abea2">
 
-## Build
+![Captura de Tela 2024-09-19 às 02 15 54](https://github.com/user-attachments/assets/961e7b19-bd40-4321-820a-e364071d25d9)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+![Captura de Tela 2024-09-19 às 02 15 21](https://github.com/user-attachments/assets/863f0e16-1a2b-4c15-9881-48183549eded)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
